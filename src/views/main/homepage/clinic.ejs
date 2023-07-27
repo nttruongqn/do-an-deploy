@@ -1,0 +1,180 @@
+<%extend('../app_add.ejs')%>
+
+    <!-- header-section-detail -->
+<%- include('includes/header-section-detail.ejs') %>
+
+    <div class="main-section">
+        <div class="container">
+            <div class="banner-clinic-section-detail">
+                <img src="/images/clinics/<%=clinic.image%>" alt="" width="100%" height="300px">
+            </div>
+            <div class="clinic-sd-name-address">
+                <div class="clinic-sd-name">
+                    <h6><%=clinic.name%></h6>
+                </div>
+                <div class="clinic-sd-address">
+                    <span><i class="fa-solid fa-location-dot"></i></span>
+                    <span><%=clinic.address%></span>
+                </div>
+            </div>
+        </div>
+       <div style="border-top: 1px solid #ccc; padding: 10px 0; "></div>
+
+        <div class="clinic-sd-main">
+            <div class="container">
+                <h6 class="clinic-intro">thông tin về bệnh viện</h6>
+                <hr>
+                <!-- <div class="clinic-intro-content">
+                    <p><b>Địa điểm:</b> Abcxyz </p>
+                    <p><b>Thời gian làm việc: </b> Từ thứ 2 đến thứ 6</p>
+                </div> -->
+                <div class="clinic-content-desc">
+                    <%-clinic.introductionHTML%>
+                </div>
+                <input hidden type="text" id="clinicAddress" value="<%= clinic.address %>">
+                <div id="myMap" class="bing-map">
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="section-list-item">
+            <div class="container">
+                <div class="s-l-i-container">
+
+                <%doctors.forEach(function(doctor){%>
+                    <div class="s-l-i-item">
+                        <div class="row">
+                
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="s-l-i-item-doctor">
+                                    <div class="s-i-doctor-left">
+                                        <img src="/images/users/<%=doctor.User.avatar%>" width="80px" height="80px" alt="">
+                                        <a href="/detail/doctor/<%=doctor.User.id %>" class="d-l-more">Xem thêm</a>
+                
+                                    </div>
+                                    <div class="s-i-doctor-right">
+                                        <div class="d-r-name"><a href="/detail/doctor/<%=doctor.User.id %>"><span>
+                                                    <%=doctor.User.name%>
+                                                </span></a>
+                                        </div>
+                                        <div class="d-r-desc"><span>
+                                            <%-doctor.User.jobDescHTML%>
+                                            </span></div>
+                                        <div class="d-r-address"><i class="fa-solid fa-location-dot"></i><span>
+                                            <%=doctor.provinceTypeData.value%>
+                                            </span></div>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="s-l-i-item-sche">
+                                    <div class="sche-select"">
+                                        <select name=""
+                                                    id="day-book-spe" class="doctor-schedule-spe"  data-doctor="<%= doctor.User.id %>">
+                                            <% sevenDaySchedule.forEach(function(day) { %>
+                                                <option value="<%= day %>">
+                                                    <%= day %>
+                                                </option>
+                                                <% }) %>
+                                        </select>
+                
+                                    </div>
+                                    <div class="sche-icon-title">
+                                        <span><i class="fa-solid fa-calendar-days"></i></span>
+                                        <span>Lịch Khám</span><br>
+                                    </div>
+                                    <div class="btn-list-sche"  id="div-schedule-<%= doctor.User.id %>">
+                                        <% if(doctor.getDataValue('schedules').length===0){ %>
+                                            <div class="no-schedule" style="font-size:14px;">
+                                                "<%= doctor.User.name %>" không có cuộc hẹn vào
+                                                    <b>
+                                                        <%= sevenDaySchedule[0] %>
+                                                    </b>. Vui lòng chọn lịch khám tiếp theo.
+                                            </div>
+                                            <% } %>
+                                                <% doctor.getDataValue('schedules').forEach( function(x, index) { %>
+                                                    <% if(x.getDataValue("isDisable")===false) { %>
+                                                        <div id="spe-btn-modal-<%= x.id %>" data-doctor-id="<%= doctor.User.id %>"
+                                                            data-date="<%= x.date %>" data-time="<%= x.time %>" class="btn-list-flex">
+                                                            <button class="b-ls-item">
+                                                                <a href="/get-book-page/<%=x.id%>">
+                                                                <span>
+                                
+                                                                    <%=x.time%>
+                                                                </span>
+                                                            </a>
+                                                            </button>
+                                                        </div>
+                
+                                                        <%}%>
+                                                            <% if( index===doctor.getDataValue('schedules').length - 1 &&
+                                                                x.getDataValue("isDisable")===true){ %>
+                                                                <span style="font-size: 14px;">
+                                                                    Không có kế hoạch khám bệnh đã lên lịch nào trong khung thời gian
+                                                                    hiện tại.
+                                                                </span>
+                                                                <% } %>
+                
+                
+                                                                    <%})%>
+                                                                    <% if(doctor.getDataValue('schedules').length> 0){ %>
+                                                                          <div class="list-sche-extra" id="list-sche-extra">
+
+                                                                        <div class="s-l-i-item-sche-add">
+                                                                            <span>Chọn <i class="fas fa-mouse-pointer"></i> và đặt (Phí đặt lịch
+                                                                                0đ)</span>
+                                                                        </div>
+                                                                        <div class="sche-address">
+                                                                        
+                                                                            <h6>ĐỊA CHỈ KHÁM</h6>
+                                                                    
+                                                                            <span>
+                                                                                <%=clinic.name%>
+                                                                            </span> <br>
+                                                                            <span>
+                                                                                <%=clinic.address%>
+                                                                            </span>
+                                                                    
+                                                                        </div>
+                                                                        <div class="sche-price">
+                                                                            <h6>Giá Khám:</h6>
+                                                                            <span>
+                                                                                <%=doctor.priceTypeData.value%> đ
+                                                                            </span>
+                                                                        </div>
+                                                                        </div>
+                                                                        <% } %>
+                
+                
+                                    </div>
+                                    <div class="list-sche-extra">
+                                    
+                                    </div>
+                
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%})%>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<%- include('includes/expand-navbar-hsd.ejs') %>
+<%- include('includes/footer.ejs') %>
+
+
+
+
+

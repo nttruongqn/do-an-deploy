@@ -1,0 +1,83 @@
+<%extend("../app.ejs")%>
+    <body>
+        <!-- header -->
+        <%- include('includes/header.ejs') %>
+
+        <div class="post-all">
+            <div class="post-all-title">
+                <div class="container">
+                   <ul class="bread-cr">
+                       <li><a href="/"><i class="fa-solid fa-house"></i></a></li>
+                    <li><a href="/">/</a></li>
+                        <li><a href="/all-posts">Cẩm nang</a></li>
+                   </ul>
+                    <div class="post-all-title-container">
+                        <h4>Cẩm nang</h4>
+
+                    </div>
+                </div>
+            </div>
+            <div class="post-all-main">
+                <div class="container">
+                    <div class="post-all-main-container">
+                        <ul class="post-all-main-list" id="post-all-main-list">
+                            <%posts.rows.forEach(function(x){%>
+
+                                <li class="post-all-main-item">
+                                    <a href="/detail/post/<%=x.id%>" class="post-all-main-link">
+                                        <img src="images/posts/<%=x.image%>" alt="" width="240">
+                                        <div class="post-all-main-l-desc">
+                                            <div class="pam-l-d-title">
+                                                <h3>
+                                                    <%=x.title%>
+                                                </h3>
+                                                <div class="extra-desc">
+                                                    <span style="margin-right: 6px;"><b></b>Tác giả: <%=
+                                                            x.getDataValue('writerName')%></span>
+                                                    <span>Ngày đăng: <%= x.getDataValue('dateClient')%></span> <br>
+                                                    <span class="desc-main-l">
+                                                        <%=x.desc%>
+                                                    </span>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <%})%>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination-container">
+                <div class="container">
+                    <nav aria-label="navigation" id="paginationForPostClient" data-total="<%= total %>">
+                        <ul class="pagination">
+                            <li class="page-item disabled li-pre-client">
+                                <a class="page-link page-post-pre-client" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo; Trước</span>
+                                </a>
+                            </li>
+
+                            <li class="page-item ml-3 li-next-client">
+                                <a class="page-link page-post-next-client" href="#" aria-label="Next">
+                                    <span aria-hidden="true">Tiếp &raquo; </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+
+    <%- include('includes/hide.ejs') %>
+    <%- include('includes/expand-navbar.ejs') %>
+    <%- include('includes/footer.ejs') %>

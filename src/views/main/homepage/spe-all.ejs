@@ -1,0 +1,74 @@
+
+<%extend("../app.ejs")%>
+    <%- include('includes/header.ejs') %>
+   <hr>
+
+    <div class="post-all add-spe">
+        <div class="post-all-title">
+            <div class="container">
+                <ul class="bread-cr">
+                    <li><a href="/"><i class="fa-solid fa-house"></i></a></li>
+                    <li><a href="/">/</a></li>
+                    <li><a href="/all-specializations">Chuyên khoa</a></li>
+                </ul>
+                <div class="post-all-title-container">
+                    <h4>Chuyên khoa</h4>
+
+                </div>
+            </div>
+        </div>
+        <div class="post-all-main add-doctor">
+            <div class="container">
+                <div class="post-all-main-container add-doctor add-spe">
+                    <ul class="post-all-main-list add-doctor add-spe" id="spe-all-main-list">
+                        <%spe.rows.forEach(function(x){%>
+                        <li class="post-all-main-item add-doctor add-spe">
+                            <a href="/detail/specialization/<%=x.id%>" class="post-all-main-link add-clinic add-spe">
+                                <img src="images/specializations/<%=x.image%>" alt="" width="240" style="object-fit: cover;">
+                                <div class="post-all-main-l-desc add-clinic add-spe">
+                                    <div class="pam-l-d-title add-clinic add-spe">
+                                        <h3><%=x.name%></h3>
+                                    </div>
+                                    <div class="doctor-l-main clinic-l-main spe-l-main">
+                                       
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <%})%>
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="pagination-container">
+            <div class="container">
+                <nav aria-label="navigation" id="paginationForSpeClient" data-total="<%= total %>">
+                    <ul class="pagination">
+                        <li class="page-item disabled li-pre-client">
+                            <a class="page-link page-spe-pre-client add-d-c-s" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo; Trước</span>
+                            </a>
+                        </li>
+
+                        <li class="page-item ml-3 li-next-client">
+                            <a class="page-link page-spe-next-client  add-d-c-s" href="#" aria-label="Next">
+                                <span aria-hidden="true">Tiếp &raquo; </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+<%- include('includes/hide.ejs') %>
+<%- include('includes/expand-navbar.ejs') %>
+<%- include('includes/footer.ejs') %>
+
+
+

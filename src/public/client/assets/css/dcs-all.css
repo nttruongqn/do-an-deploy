@@ -1,0 +1,56 @@
+.post-all-main-l-desc.add-spe{
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+
+
+
+.post-all-main-l-desc.add-doctor .pam-l-d-title.add-doctor h3{
+    font-size: 16px;
+}
+
+.post-all-main-l-desc.add-doctor .doctor-l-main{
+    font-size: 16px;
+}
+
+
+.post-all-main-l-desc.add-spe .pam-l-d-title.add-spe h3 {
+    font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+.post-all-main-l-desc.add-doctor .pam-l-d-title.add-doctor h3 {
+    font-size: 13px;
+}
+.post-all-main-l-desc.add-clinic .pam-l-d-title.add-clinic h3 {
+    font-size: 13px;
+}
+
+.post-all-main-l-desc.add-doctor .doctor-l-main {
+    font-size: 14px;
+}
+.post-all-main-l-desc.add-clinic .doctor-l-main {
+    font-size: 14px;
+}
+.post-all-main-l-desc.add-spe .pam-l-d-title.add-spe h3 {
+    font-size: 18px;
+}
+}
+
+@media only screen and (max-width: 280px) {
+.post-all-main-l-desc.add-doctor .pam-l-d-title.add-doctor h3 {
+    font-size: 12px;
+}
+.post-all-main-l-desc.add-doctor .pam-l-d-title.add-clinic h3 {
+    font-size: 12px;
+}
+
+.post-all-main-l-desc.add-doctor .doctor-l-main {
+    font-size: 10px;
+}
+.post-all-main-l-desc.add-spe .pam-l-d-title.add-spe h3 {
+    font-size: 18px;
+}
+}

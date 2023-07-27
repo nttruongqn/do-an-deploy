@@ -1,0 +1,60 @@
+<% extend("master.ejs") %>
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Cập nhật thông tin hô trợ viên</h1>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-10 mx-auto">
+            <form id="formUpdateSupporter">
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label for="nameSupporter">Họ tên nhân viên </label>
+                        <input type="text" class="form-control" id="nameSupporter" name="nameSupporter"
+                            placeholder="Họ tên hỗ trợ viên" value="<%= supporter.name %>">
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="phoneSupporter">Số điện thoại</label>
+                        <input type="text" class="form-control" id="phoneSupporter" name="phoneSupporter"
+                            placeholder="Số điện thoại" value="<%= supporter.phone %>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="addressSupporter">Địa chỉ</label>
+                    <input type="text" class="form-control" id="addressSupporter" name="addressSupporter"
+                        placeholder="Địa chỉ" value="<%= supporter.address %>">
+                </div>
+                <div class="form-group">
+                    <label for="introEditSupporter">Mô tả</label>
+                    <textarea id="introEditSupporter" name="introEditSupporter"
+                        placeholder="Mô tả" class="form-control"><%= supporter.description %></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="image-supporter">Ảnh đại diện</label>
+                    <input type="file" id="image-supporter" accept="image/*" onchange="loadFileSupporter(event)">
+                </div>
+
+                <div class="form-group">
+                    <% if(supporter.avatar) { %>
+                        <img class="img-preview-supporter-create" id="image-preview"
+                            src="/images/users/<%= supporter.avatar %>">
+                        <% } else { %>
+                            <img class="img-preview-supporter-create d-none" id="image-preview">
+                            <% } %>
+                </div>
+
+                <button type="button" class="btn btn-primary" id="btnUpdateSupporter"
+                    data-Supporter-id="<%= supporter.id %>">Cập nhật</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("div #featureManage").addClass('show');
+            $("div #featureManage").find($("#aManageSupporter")).addClass("active");
+        })
+    </script>

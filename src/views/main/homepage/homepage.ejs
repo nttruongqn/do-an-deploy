@@ -1,0 +1,358 @@
+<%extend("../app.ejs")%>
+
+    <!-- header -->
+<%- include('includes/header.ejs') %>
+
+    <!-- banner -->
+    <div class="banner">
+        <div class="banner-container">
+            <div class="banner-title">
+                <h2>nền tảng y tế</h2>
+                <h1>chăm sóc sức khỏe toàn diện</h1>
+            </div>
+            <div class="banner-search">
+                <div class="banner-search-container">
+                    <span class="icon-search"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <input type="text" placeholder="Nhập thông tin cần tìm kiếm" class="icon-input" id="input-search">
+                </div>
+                <div class="banner-search-input">
+                    <div class="banner-search-input-title" id="banner-search-input-title" style="display: none;">
+                        <div class="rs-search rs-none" >
+                        <span class="si-title">Kết quả tìm kiếm</span>
+                        <ul class="list-si-title" id="show-info-search-none" >
+                            <li class="lst-item" >
+                                <a href="" class="lst-link">
+                                    <img src="" alt="" width="40px"
+                                        height="40px">
+                                    <span class="lst-item-name"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        </div>
+
+                        <div class="r-s-scroll" id="r-s-scroll">
+                        <div class="rs-search rs rs-spe">
+                        <span class="si-title spe">Chuyên khoa</span>
+                        <ul class="list-si-title" id="show-info-search-spe">
+                            <li class="lst-item">
+                                <a href="" class="lst-link">
+                                    <img src="" alt="" width="40px" height="40px">
+                                    <span class="lst-item-name"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        </div>
+                        <div class="rs-search rs rs-clinic">
+                            <span class="si-title clinic">Cơ sở y tế</span>
+                            <ul class="list-si-title" id="show-info-search-clinic">
+                                <li class="lst-item">
+                                    <a href="" class="lst-link">
+                                        <img src="" alt="" width="40px" height="40px">
+                                        <span class="lst-item-name"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rs-search rs rs-doctor">
+                            <span class="si-title doctor">Bác sĩ</span>
+                            <ul class="list-si-title" id="show-info-search-doctor">
+                                <li class="lst-item">
+                                    <a href="" class="lst-link">
+                                        <img src="" alt="" width="40px" height="40px">
+                                        <span class="lst-item-name"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rs-search rs rs-post">
+                            <span class="si-title post">Cẩm nang</span>
+                            <ul class="list-si-title" id="show-info-search-post">
+                                <li class="lst-item">
+                                    <a href="" class="lst-link">
+                                        <img src="" alt="" width="40px" height="40px">
+                                        <span class="lst-item-name"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="banner-card">
+                <div class="container">
+                    <div class="banner-card-container">
+                        <div class="row autoplay">
+                            <div class="col-4">
+                                <div class="banner-card-item">
+                                    <div class="banner-card-title">
+                                        <h4>Hệ thống đặt lịch khám bệnh tốt nhất Việt Nam</h4>
+                                    </div>
+                                    <div class="banner-card-content">
+                                        <p>DoctorCare tự tin là hệ thống website đặt lịch khám bệnh tốt nhất Việt Nam
+                                            hiện nay.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="banner-card-item">
+                                    <div class="banner-card-title">
+                                        <h4>Đội ngũ bác sĩ giàu kinh nghiệm</h4>
+                                    </div>
+                                    <div class="banner-card-content">
+                                        <p>DoctorCare có số lượng y bác sĩ giàu kinh nghiệm chữa bệnh,có nhiều thành
+                                            tựu xuất sắc trong sự nghiệp y học.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="banner-card-item">
+                                    <div class="banner-card-title">
+                                        <h4>Đáp ứng được sự hài lòng của khách hàng</h4>
+                                    </div>
+                                    <div class="banner-card-content">
+                                        <p>
+                                            DoctorCare đã nhận được nhiều phản hồi tích cực từ phía khách hàng qua thời
+                                            gian sử dụng dịch vụ.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="banner-card-item">
+                                    <div class="banner-card-title">
+                                        <h4>Dịch vụ với chi phí phù hợp với khách hàng</h4>
+                                    </div>
+                                    <div class="banner-card-content">
+                                        <p>
+                                            DoctorCare cung cấp những dịch vụ với các chi phí thỏa đáng, phù hợp
+                                            với nhu cầu khám chữa bệnh của khách hàng.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="banner-footer">
+                <div class="container">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- section -->
+    <!-- section-specicalty -->
+    <div class="section section-specialty bg-white">
+        <div class="container">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-header-title">
+                        <h5>Chuyên khoa phổ biến</h5>
+                    </div>
+
+                    <div class="section-view-all">
+                        <a href="all-specializations" ><span>Xem thêm</span></a>
+                    </div>
+                </div>
+                <div class="section-list">
+                    <div class="row section-row">
+                        <% specializationsLM.forEach(function(item) { %>
+                            <div class="col-3">
+                                <a href="/detail/specialization/<%= item.id %>" class="section-item">
+                                    <img src="/images/specializations/<%=item.image%>" alt="">
+                                    <div class="section-item-title"><a href="/detail/clinic/<%= item.id %>"><span><%=item.name%></span></a></div>
+                                </a>
+
+                            </div>
+                            <% }) %>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        
+
+    </div>
+    <hr>
+    <!-- section-clinic -->
+    <div class="section section-clinic bg-white">
+        <div class="container">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-header-title">
+                        <h5>Cơ sở y tế nổi bật</h5>
+                    </div>
+
+                    <div class="section-view-all">
+                        <a href="all-clinics"><span>Xem thêm</span></a>
+                    </div>
+                </div>
+                <div class="section-list">
+                    <div class="row section-row">
+                    <%clinicsLM.forEach(function(item){%>
+                        <div class="col-3">
+                            <a href="/detail/clinic/<%=item.id%>" class="section-item">
+                                <img src="images/clinics/<%=item.image%>" alt="">
+                                <div class="section-item-title"><a href="/detai/clinic/<%=item.id%>"><span><%=item.name%></span></a></div>
+                            </a>
+                        </div>
+                        <%})%>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <hr>
+    <!-- section-doctor -->
+    <div class="section section-doctor bg-white" >
+        <div class="container">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-header-title">
+                        <h5>Bác sĩ các chuyên khoa</h5>
+                    </div>
+
+                    <div class="section-view-all">
+                        <a href="all-doctors"><span>Xem thêm</span></a>
+                    </div>
+                </div>
+                <div class="section-list ">
+                    <div class="row section-row">
+                        <%doctorsLM.forEach(function(item){ %>
+                        <div class="col-3">
+                            <a href="/detail/doctor/<%=item.id%>" class="section-doctor-item" >
+                                <div class="section-doctor-img">
+                                    <img src="images/users/<%=item.avatar%>" alt="">
+                                </div>
+                                <div class="doctor-main">
+                                    <span><%=item.name%></span>
+                                    <span><%= item.getDataValue('specializationName')%></span>
+                                </div>
+
+                            </a>
+
+                        </div>
+                        <%})%>
+                       
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <hr>
+    <!-- section-post -->
+    <div class="section section-post bg-white">
+        <div class="container">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-header-title">
+                        <h5>Cẩm nang</h5>
+                    </div>
+    
+                    <div class="section-view-all">
+                        <a href="all-posts"><span>Xem thêm</span></a>
+                    </div>
+                </div>
+                <div class="section-list">
+                    <div class="row section-row-handbook">
+                       <%posts.forEach(function(x){%>
+                        <div class="col-6 section-row-h-item">
+                            <a href="/detail/post/<%=x.id%>">
+                            <div class="h-item-image">
+                                <img src="/images/posts/<%=x.image%>" alt="" >
+                            </div>
+                            <div class="h-item-main">
+                                <h6><%=x.title%></h6>
+                                <span><%=x.desc%></span>
+                            </div>
+                           </a>
+                        </div>
+                        <%})%>
+                        
+                    
+                    </div>
+                    
+                    
+    
+                </div>
+            </div>
+    
+        </div>
+    
+    
+    
+    </div>
+    <hr>
+   
+
+   
+
+
+    <div class="bg-l-g">
+    </div>
+    <!-- review -->
+    <div class="customer-review">
+        <div class="container">
+            <div class="customer-review-title text-center ">
+                <h4>Khách hàng nói gì về sử dụng dịch vụ tại DoctorCare</h4>
+            </div>
+            <div class="customer-review-list">
+                <div class="row review-row">
+                    <% feedbackConfirms.forEach(function(x){%>
+                        <div class="col-6">
+                        <div class="customer-card">
+                            <div class="card-review-top">
+                                <div class="card-review-icon">
+                                    <i class="fas fa-comment-dots"></i>
+                                </div>
+                                <div class="card-review-content">
+                                    <span>
+                                       <%=x.content%>
+                                    </span>
+                                </div>
+                                <div class="card-review-img">
+                                    <img src="/images/feedbacks/<%=x.avatar%>" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-review-bottom text-center">
+                            <span><%=x.name%></span><br>
+                            <span><%=x.age%> tuổi ,<%=x.address%></span>
+                        </div>
+                    
+                    </div>
+
+                  <%})%>
+                  
+                   
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+<%- include('includes/hide.ejs') %>
+<%- include('includes/expand-navbar.ejs') %>
+<%- include('includes/footer.ejs') %>

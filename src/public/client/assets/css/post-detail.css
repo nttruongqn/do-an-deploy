@@ -1,0 +1,66 @@
+.post-detail .post-detail-container{
+font: 14px/1.5 'Montserrat',
+sans-serif;
+
+}
+
+
+.post-detail .post-detail-container .post-left-content{
+    /* border: 1px solid #ccc; */
+    padding: 20px 0;
+   
+
+}
+.post-detail .post-detail-container .post-left-content .post-left-content-author{
+    padding: 5px 0;
+}
+
+.post-detail .post-detail-container .post-left-content .post-left-content-post{}
+
+.post-detail .post-detail-container .post-left-content .post-left-content-post .content-post-desc{
+    padding-bottom: 10px;
+}
+.post-detail .post-detail-container .post-right-content .list-main-content .children{
+    padding-left: 4px;
+}
+
+
+.post-detail .post-detail-container .post-right-content{
+    /* border: 1px solid #ccc; */
+    padding: 20px 0;
+    position: sticky ;
+    top:0px;
+   
+    
+}
+
+.post-detail .post-detail-container .post-right-content h6{
+    font-weight: bold;
+}
+.post-detail .post-detail-container .post-right-content .list-main-title{
+    color:#008B8B;
+}
+
+.post-detail .post-detail-container .post-right-content ul li{
+    padding: 5px;
+}
+
+.post-detail .post-detail-container .post-right-content ul li a{
+    color:#008B8B;
+}
+
+.post-detail .post-detail-container .post-left-content-post .content-post-detail p{
+    color: #333;
+}
+
+.post-detail .post-detail-container .post-left-content-post .content-post-detail li{
+    list-style: inside;
+}
+
+.post-detail .post-detail-container .post-left-content-post .content-post-detail h6{
+    font-weight: bold;
+}
+
+.post-detail .post-detail-container .post-left-content-post .content-post-detail img{
+    width: 100%;
+}

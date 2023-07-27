@@ -1,0 +1,117 @@
+<% extend("master.ejs") %>
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Quản lý nhân viên hỗ trợ</h1>
+        <a href="/users/manage/supporter/create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-plus-circle fa-sm text-white-50"></i> Thêm mới</a>
+    </div>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Danh sách nhân viên hỗ trợ</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTableSupporter" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% supporters.rows.forEach(function(supporter) { %>
+                            <tr>
+                                <td>
+                                    <%= supporter.id %>
+                                </td>
+                                <td>
+                                    <%= supporter.name %>
+                                </td>
+                                <td>
+                                    <% if(supporter.isActive) { %> Active
+                                        <% } else { %> Inactive
+                                            <% } %>
+                                </td>
+                                <td class="">
+                                    <a class="show-supporter-info" data-supporter-id="<%= supporter.id %>" href="#"
+                                        title="Xem thông tin"><i class="fas fa-info-circle"></i></a>
+                                    <a class="edit-supporter-info" href="/users/supporter/edit/<%= supporter.id %>"
+                                        title="Edit"><i class="fas fa-pen-square mx-3"></i></a>
+                                    <a class="delete-supporter-info" data-supporter-id="<%= supporter.id %>" href="#"
+                                        title="Delete"><i class="fas fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+                <nav aria-label="navigation" id="paginationForSupporter" data-total="<%=total%>">
+                    <ul class="pagination">
+                        <li class="page-item disabled li-pre d">
+                            <a class="page-link page-supporter-pre" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo; Trước</span>
+                            </a>
+                        </li>
+                
+                        <li class="page-item ml-3 li-next d">
+                            <a class="page-link page-supporter-next" href="#" aria-label="Next">
+                                <span aria-hidden="true">Tiếp &raquo; </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"
+        id="modalInfoSupporter">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Thông tin nhân viên</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-row">
+                                <div class="form-group col-7">
+                                    <label for="nameSupporter" class="col-form-label text-label">Họ Tên</label>
+                                    <input type="text" class="form-control" id="nameSupporter" disabled>
+                                </div>
+                                <div class="form-group col-5">
+                                    <label for="phoneSupporter" class="col-form-label text-label">Số điện thoại</label>
+                                    <input type="text" class="form-control" id="phoneSupporter" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="addressSupporter" class="col-form-label text-label">Địa chỉ</label>
+                                <input type="text" class="form-control" id="addressSupporter" name="addressSupporter"
+                                    disabled>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label text-label"> Ảnh đại diện:</label>
+                                <div id="imageSupporter"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("div #featureManage").addClass('show');
+            $("div #featureManage").find($("#aManageSupporter")).addClass("active");
+            $(".supporter-list-posts").removeClass("active");
+        })
+    </script>

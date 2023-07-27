@@ -1,0 +1,421 @@
+.main-section{
+  padding-top: 55px;
+
+}
+
+.main-section.spe{
+  font: 14px/1.5 'Montserrat',
+  sans-serif;
+}
+
+/* specialty */
+.main-section-detail {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.main-section-detail-container {
+  padding: 20px 0;
+  height: 300px;
+  overflow: hidden;
+}
+
+.show-more {
+  height: auto;
+}
+
+.main-section-detail-container .msd-content {
+  padding-top: 5px;
+}
+.main-section-detail-container .msd-content ul{
+  list-style: inside;
+  
+}
+
+.main-section-detail-container .msd-content h5,
+h6 {
+  font-weight: bold;
+  font-size: 14px;
+}
+.main-section-detail-container .msd-content h5 {
+  font-size: 18px;
+}
+.main-section-detail-container .msd-content span,
+p {
+  font-size: 16px;
+  line-height: 16px;
+  margin-bottom: 0;
+  color:#333333;
+}
+
+.t-s-h-container .text-hide-more {
+  position: relative;
+  top: -14px;
+}
+
+.t-s-h-container .t-s-h {
+font: 14px/1.5 'Montserrat',
+sans-serif;
+color: #22b3ab;
+  padding: 4px 0;
+}
+
+.t-s-h-container .t-s-h .text-show-more:hover {
+  cursor: pointer;
+}
+
+.t-s-h-container .t-s-h .text-hide-more:hover {
+  cursor: pointer;
+}
+
+/* clinic */
+
+.main-section .banner-clinic-section-detail img {
+  object-fit: cover;
+}
+
+.main-section .clinic-sd-name-address {
+  padding-top: 10px;
+}
+
+.main-section .clinic-sd-name-address .clinic-sd-name h6 {
+  font-size: 18px;
+}
+
+.main-section .clinic-sd-name-address span:first-child {
+  font-family: "Nunito", sans-serif;
+  font-size: 12px;
+  padding-right: 2px;
+  font: 14px/1.5 'Montserrat',
+  sans-serif;
+  ;
+}
+.clinic-content-desc img{
+  width: 100%;
+}
+.main-section .clinic-sd-name-address span:last-child {
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  font: 14px/1.5 'Montserrat',
+  sans-serif;
+  ;
+}
+.main-section .clinic-sd-name-address .clinic-sd-address {
+  position: relative;
+  top: -10px;
+ 
+  ;
+}
+
+.main-section .clinic-sd-main .clinic-intro {
+  text-transform: uppercase;
+}
+
+.main-section .clinic-sd-main .clinic-content-desc {
+  padding-bottom: 20px;
+}
+
+.main-section .clinic-sd-main .clinic-content-desc p{
+  font: 14px/1.5 'Montserrat',
+  sans-serif; ;
+}
+
+.main-section .clinic-sd-main .clinic-intro-content {
+  padding: 20px 0;
+}
+
+/* doctor */
+.dd-img-title-container {
+ 
+  display: flex;
+  padding: 20px 0;
+}
+.dd-img-title-container .dd-img img {
+  border-radius: 50%;
+}
+
+.dd-img-title-container .dd-img-title-desc {
+  padding-left: 20px;
+}
+.dd-img-title-container .dd-img-title-desc .dd-img-title h4{
+  font-weight: 900;
+}
+
+.dd-img-title-container .dd-img-title-desc .dd-img-t-desc span {
+  font: 14px/1.5 'Montserrat',
+  sans-serif;
+  font-size: 14px;
+}
+
+.doctor-detail-main .doctor-detail-content h6 {
+  /* padding: 5px 0; */
+  font-weight: 900;
+  font-size: 16px;
+}
+.doctor-detail-main .doctor-detail-content{
+  font-size: 14px;
+  padding-bottom: 20px;
+  font: 14px/1.5 'Montserrat',
+  sans-serif;
+}
+.doctor-detail-main .doctor-detail-content ul li{
+  list-style: inside;
+  padding-left: 4px;
+}
+
+.s-l-i-item-sche.br {
+  border-right: 1px solid #eee;
+  padding-right: 2px;
+}
+
+/* 
+
+
+/* all */
+
+.section-list-item {
+  padding: 5px 0;
+  /* font-family: "Nunito", sans-serif; */
+  font: 14px/1.5 'Montserrat';
+  background-color: rgba(175, 174, 174, 0.03);
+  padding: 20px 0;
+}
+
+.section-list-item .select-province{
+  padding: 5px 0;
+  margin-bottom: 20px;
+}
+
+.section-list-item.sli-doctor-item {
+  background-color: #fff;
+}
+
+.section-list-item .s-l-i-container .s-l-i-item {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0.5px 0.5px #ccc;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+.section-list-item .s-l-i-container .s-l-i-item .s-l-i-item-doctor {
+  padding: 10px;
+  display: flex;
+  padding-bottom: 15px;
+  border-right: 1px solid #eee;
+}
+
+.section-list-item
+  .s-l-i-container
+  .s-l-i-item
+  .s-l-i-item-doctor
+  .s-i-doctor-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-list-item
+  .s-l-i-container
+  .s-l-i-item
+  .s-l-i-item-doctor
+  .s-i-doctor-left
+  img {
+  border-radius: 50%;
+}
+
+.section-list-item
+  .s-l-i-container
+  .s-l-i-item
+  .s-l-i-item-doctor
+  .s-i-doctor-left
+  .d-l-more {
+  color: #22b3ab;
+}
+
+.section-list-item
+  .s-l-i-container
+  .s-l-i-item
+  .s-l-i-item-doctor
+  .s-i-doctor-right {
+  padding: 0 10px;
+}
+
+.section-list-item
+  .s-l-i-container
+  .s-l-i-item
+  .s-l-i-item-doctor
+  .s-i-doctor-right
+  .d-r-name
+  a {
+  padding-bottom: 5px;
+  color: #22b3ab;
+}
+
+.section-list-item .s-l-i-container .s-l-i-item .s-l-i-item-doctor .s-i-doctor-right .d-r-name a span{
+  font-weight: bold;
+}
+.section-list-item
+  .s-l-i-container
+  .s-l-i-item
+  .s-l-i-item-doctor
+  .s-i-doctor-right
+  .d-r-desc {
+  padding-bottom: 5px;
+  font-size: 15px;
+}
+
+.section-list-item
+  .s-l-i-container
+  .s-l-i-item
+  .s-l-i-item-doctor
+  .s-i-doctor-right
+  .d-r-address
+  span {
+  margin-left: 6px;
+  font-size: 15px;
+}
+
+.section-list-item .s-l-i-container .s-l-i-item .s-l-i-item-sche {
+  padding: 10px;
+}
+
+.s-l-i-item-sche .sche-select select {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  color: #22b3ab;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 2px 0;
+}
+
+.s-l-i-item-sche .sche-icon-title {
+  margin: 10px 0;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.s-l-i-item-sche .sche-icon-title .sche-title{
+  font-weight: bold;
+}
+.s-l-i-item-sche .sche-icon-title span{
+  font-weight: bold;
+}
+
+.s-l-i-item-sche .btn-list-sche {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.s-l-i-item-sche .btn-list-sche  button {
+  width: 110px;
+  height: 40px;
+  /* padding: 4px 20px; */
+  margin-bottom: 4px;
+  border: none;
+  outline: none;
+  margin-right: 4px;
+  background-color: #fff04b;
+  display: inline-block;
+}
+
+.s-l-i-item-sche .btn-list-sche button:hover{
+  background-color: #22b3ab;
+}
+
+.s-l-i-item-sche .btn-list-sche button span {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+  font-family: "Montserrat", sans-serif;
+}
+
+
+.s-l-i-item-sche-add {
+  font-size: smaller;
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.s-l-i-item-sche-add.no-bt {
+  border-bottom: none;
+}
+
+.s-l-i-item-sche .s-l-i-item-sche-add span {
+  font-size: 12px;
+}
+
+.sche-address-price{
+  /* padding-top: 52px; */
+}
+
+.sche-address {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  
+}
+
+.sche-address h6{
+font-weight: bold;
+}
+.sche-price h6 {
+  font-weight: bold;
+}
+
+
+.sche-address .sche-address-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #666;
+  line-height: 24px;
+}
+
+.sche-address .sche-address-name-clinic{
+  font-weight: bold;
+  line-height: 24px;
+}
+.sche-address .sche-name-address{
+  line-height: 24px;
+}
+
+.sche-address-price .sche-price h6{
+  color: #666;
+  font-weight: bold;
+}
+
+.sche-address p {
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.sche-price {
+  padding: 10px 0;
+  display: flex;
+
+
+}
+
+.sche-price h6 {
+  text-transform: uppercase;
+}
+.sche-price span {
+  font-size: 14px;
+  padding-left: 10px;
+  position: relative;
+  
+}
+.list-sche-extra{
+  width: 100%;
+}
+
+/* responsive */
+
+@media only screen and (max-width: 576px) {
+  .s-l-i-item-sche.br {
+    border-right: none;
+    border-bottom: 1px solid #eee;
+  }
+}

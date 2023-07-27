@@ -1,0 +1,197 @@
+.form-book-main {
+  padding: 10px;
+  background-color: #eee;
+}
+
+h6,span,p,input,label,textarea{
+  font: 14px/1.5 'Montserrat',
+  sans-serif;
+}
+
+.form-book-main .form-book-title-image {
+  display: flex;
+}
+
+.form-book-main .form-book-title-image .f-b-t-image img {
+  border-radius: 50%;
+}
+
+.form-book-main .form-book-title-image .f-b-t-title {
+  padding-top:0px;
+  padding-left: 20px;
+}
+
+/* .form-book-main .form-book-title-image .f-b-t-title h6 {
+  text-transform: uppercase;
+  font-size: 15px;
+  padding-bottom: 0;
+} */
+
+.form-book-main .form-book-title-image .f-b-t-titleb {
+  font-size: 14px;
+  text-transform: uppercase;
+
+}
+
+.form-book-main .form-book-title-image .f-b-t-title .f-b-t-namedt {
+  color: #20b2aa;
+  font-size: 16px;
+  font-weight: bold;
+ 
+}
+
+.form-book-main .form-book-title-image .f-b-t-title .f-b-t-timebook {
+  font-size: 13px;
+ 
+}
+
+.form-container {
+  padding: 20px 0;
+}
+
+.form-content .form-group {
+  width: 100%;
+  border: 1.5px solid #eee;
+  display: flex;
+  align-items: center ;
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.form-content .form-group .invalid-feedback{
+  color:#ffea00;
+  width: 100%;
+  position: absolute;
+  bottom:-18px;
+  padding-left: 6px ; 
+}
+.form-content .form-group-price{
+  width: 30%;
+  border: 1px solid #f3dab8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.form-content .form-group-price label{
+  padding-left: 10px;
+}
+
+.form-content .form-group.t-a {
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
+
+.form-content .form-group-p.price {
+  background-color: #eee;
+  border-radius: 4px;
+  padding: 10px 6px;
+  margin-bottom: 4px;
+}
+
+.extra-info-content{
+margin-bottom: 2px;
+}
+
+.form-content .form-group-p.price .fg-price-top {
+  border-bottom: 0.5px solid #fff;
+  padding: 10px 0;
+}
+
+.form-content .form-group-p.price .fg-price-top .fpt {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.form-content .form-group-p.price .fg-price-top .fpt span:first-child {
+  padding-bottom: 4px;
+}
+
+.form-content .form-group-p.price .fg-price-bottom {
+  padding-top: 10px;
+}
+.form-content .form-group-p.price .fg-price-bottom .fpt {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.form-content .form-group.t-a textarea {
+  border: none;
+  outline: none;
+  padding-left: 5px;
+  color: #20b2aa;
+  width: 100%;
+  height: 100%;
+  padding-top: 5px;
+  font-size: 16px;
+}
+
+.form-content .form-group span {
+  padding: 0 5px;
+  width: 5%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.form-group-rd {
+  margin-bottom: 0.3rem;
+}
+
+
+
+.form-content .form-group input {
+  width: 95%;
+  padding: 6px;
+  border: none;
+  outline: none;
+  color: #20b2aa;
+  font-size: 16px;
+}
+
+.form-content .form-group input:focus ~ .form-group span i {
+  color: #20b2aa;
+}
+
+
+.form-content .form-group-notice {
+  background-color: #fff04b;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.form-content .form-group-notice h6 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.form-content .form-group-notice span {
+  font-size: 15px;
+}
+
+.form-content .btn-confirm {
+  width: 100%;
+  margin-top: 6px;
+  border: none;
+  outline: none;
+  background: rgba(0, 110, 111, 0.9);
+  padding: 5px 0;
+  color: #ffffff;
+}
+
+.form-content .btn-confirm:hover {
+  background-color: rgba(0, 110, 111, 1);
+}
+
+.form-content .bot-btn {
+  font-size: 11.8px;
+}
+
+.form-content .bot-btn span{
+  color: #20b2aa;
+}

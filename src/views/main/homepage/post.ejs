@@ -1,0 +1,146 @@
+<body>
+    <%extend("../app.ejs")%>
+        <!-- header -->
+    <%- include('includes/header.ejs') %>
+        <hr>
+
+        <div class="container">
+            <ul class="bread-cr">
+                <li><a href="/"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="/">/</a></li>
+                <li><a href="/all-posts">Cẩm nang</a></li>
+                <li><a href="/">/</a></li>
+                <li><a href="<%=post.id%>"><%=post.title%></a></li>
+            </ul>
+        </div>
+        
+
+        <div class="post-detail">
+            <div class="container">
+                <div class="post-detail-container">
+                    <div class="row">
+                        <div class="col-md-9 col-sm-12">
+                            <div class="post-left-content">
+                                <div class="post-left-content-title">
+                                    <h2><%=post.title%></h2>
+                                </div>
+                                <div class="post-left-content-author">
+                                    <span>Sản phẩm của <span>DoctorCare</span></span><br>
+                                    <span>Tác giả: <span class="span-color"><%=post.getDataValue('writerName')%></span>
+                                    </span><br>
+                                    <span>Xuất bản: <%=post.getDataValue('dateClient')%></span>
+                                </div>
+                                <div class="post-left-content-post">
+                                    <div class="content-post-desc">
+                                        <h6><b><%=post.desc%></b></h6>
+
+                                    </div>
+                                    <div class="content-post-detail">
+                                       
+                                       <%-post.contentHTML%>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-3 ">
+                            <div class="post-right-content">
+                                <h6>Nội dung chính</h6>
+                                <h6 class="list-main-title"><%=post.title%></h6>
+                                <ul class="list-main-content">
+                                   <%-post.descMarkdown%>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hide-all spe-hide-all" id="spe-hide-all">
+            <div class="hide-all-container">
+                <div class="hide-all-top">
+                    <div class="icon-back" id="icon-back"><i
+                                class=" fa-solid fa-arrow-left"></i></div>
+                    <div class="hide-title"><span>Chuyên khoa</span> </div>
+                </div>
+                <div class="hide-all-bottom">
+                    <div class="hide-title-bottom">
+                        <h6>Chuyên khoa nổi bật
+                        </h6>
+                    </div>
+                    <ul class="hide-all-list">
+                        <%specializations.forEach(function(item){%>
+                            <li class="hide-all-item d-h">
+                                <a href="/detail/specialization/<%= item.id %>">
+                                    <div class="hide-item-img spe-item">
+                                        <img src="/images/specializations/<%=item.image%>" alt="" width="100px"
+                                            height="67px">
+
+                                    </div>
+                                    <div class="hide-item-main">
+                                        <span class="item-main-top">
+                                            <%=item.name%>
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <%})%>
+                                <!-- <li class="hide-all-item a-h"><a href="">
+                                    <span>Xem tất cả</span>
+                                </a></li> -->
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="hide-all cli-hide-all" id="cli-hide-all">
+            <div class="hide-all-container">
+                <div class="hide-all-top">
+                    <div class="icon-back" id="icon-back1"><i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <div class="hide-title"><span>Cơ sở y tế</span> </div>
+                </div>
+                <div class="hide-all-bottom">
+                    <div class="hide-title-bottom">
+                        <h6>Cơ sở y tế nổi bật
+                        </h6>
+                    </div>
+                    <ul class="hide-all-list">
+                        <%clinics.forEach(function(item){%>
+                            <li class="hide-all-item d-h">
+                                <a href="/detail/clinic/<%= item.id %>">
+                                    <div class="hide-item-img cli-item">
+                                        <img src="/images/clinics/<%=item.image%>" alt="" width="100px" height="67px">
+
+                                    </div>
+                                    <div class="hide-item-main">
+                                        <span class="item-main-top">
+                                            <%=item.name%>
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <%})%>
+                                <!-- <li class="hide-all-item a-h"><a href="">
+                                    <span>Xem tất cả</span>
+                                </a></li> -->
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+
+
+<%- include('includes/hide.ejs') %>
+<%- include('includes/expand-navbar.ejs') %>
+<%- include('includes/footer.ejs') %>

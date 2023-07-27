@@ -1,0 +1,90 @@
+<%extend("../app.ejs")%>
+ 
+    <!-- header -->
+    <%- include('includes/header.ejs') %>
+
+  <div class="container">
+    <ul class="bread-cr">
+        <li><a href="/"><i class="fa-solid fa-house"></i></a></li>
+        <li><a href="/">/</a></li>
+        <li><a href="/feedback">Phản hồi khách hàng</a></li>
+    </ul>
+  </div>
+
+
+    <div class="form-feedback-main">
+        <div class="container">
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!-- form -->
+    <div class="form-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-content">
+                        <form id="formCreateNewFeeback">
+                            <div class="form-group">
+                                <span><i class="fa-solid fa-user" style="color:#20b2aa"></i></span> <input type="text"
+                                    value="" name="name" placeholder="Nhập họ tên " id="feedbackName">
+                                    <div class="invalid-feedback">
+                                        Tên không được để trống
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <span><i class="fa-solid fa-pen-to-square" style="color:#20b2aa"></i></i></span> <input type="number" value="" name="age"
+                                    placeholder="Nhập tuổi " id="feedbackAge">
+                                    <div class="invalid-feedback">
+                                        Tuổi không được để trống
+                                    </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <span><i class="fa-solid fa-location-dot"  style="color:#20b2aa"></i></span> <input type="text" value="" name="address"
+                                    placeholder="Nhập địa chỉ"  id="feedbackAddress">
+                                    <div class="invalid-feedback">
+                                        Địa chỉ không được để trống
+                                    </div>
+                            </div>
+                            <div class="form-group-image-old mb-3" >
+                                <label class="mr-2" for="contentFeedBack">Avatar: </label>
+                                <input type="file" id="image-feedback"  onchange="loadFileFeedback(event)" accept="image/*"  multiple>
+                        
+                            </div>
+                            <div class="form-group-history ">
+                                <img class="img-preview-feedback d-none" id="image-preview" style="padding-top:10px">
+                            </div>
+
+
+
+                            <div class="form-group t-a" style="margin-top: 10px;">
+                                <span><i class="fa-solid fa-circle-plus"  style="color:#20b2aa"></i></span>
+                                <textarea type="textarea" value="" name="content" placeholder="Nội dung phản hồi" id="feedbackContent" ></textarea>
+                                <div class="invalid-feedback">
+                                    Nội dung không được để trống
+                                </div>
+    
+                            </div>
+                          
+                        <button  type="button" class="btn-confirm btn-confirm-feedback" id="createNewFeedback">Gởi phản hồi</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <!-- hideall -->
+ 
+    <%- include('includes/hide.ejs') %>
+    <%- include('includes/expand-navbar.ejs') %>
+    <%- include('includes/footer.ejs') %>
+
+    
+

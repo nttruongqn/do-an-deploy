@@ -1,0 +1,282 @@
+.banner .banner-container {
+  background: url(../../../assets/images/background/b-g-banner-1.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+.banner .banner-container .banner-title {
+  width: 100%;
+  height: 30%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner .banner-container .banner-title h1 {
+  font-size: 35px;
+  text-transform: uppercase;
+  color: #008b8b;
+  text-shadow: 1px 1px 1px #ccc;
+  font-weight: 600;
+}
+
+.banner .banner-container .banner-title h2 {
+  font-size: 35px;
+  text-transform: uppercase;
+  color: #008b8b;
+  font-weight: 400;
+  text-shadow: 0.5px 0.5px 0.5px #ccc;
+}
+.banner .banner-container .banner-search {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+}
+
+.banner .banner-container .banner-search .banner-search-container {
+  width: 500px;
+  height: 50px;
+  border-radius: 40px;
+  margin-top: 10px;
+  background-color: transparent;
+  border: 1.5px solid #008b8b;
+  display: flex;
+}
+
+.banner .banner-container .banner-search .banner-search-container .icon-search {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner .banner-container .banner-search .banner-search-container .icon-search {
+  font-size: 30px;
+  color: #daa520;
+  cursor: pointer;
+}
+
+.banner .banner-container .banner-search .banner-search-container .icon-input {
+  width: 70%;
+  color: white;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.banner .banner-container .banner-search .banner-search-container .icon-input::placeholder {
+  color: #008080;
+  font-size: 15px;
+  font-weight: 500;
+ 
+}
+
+.banner .banner-container .banner-search .banner-search-input {
+  width: 500px;
+  margin-top: 10px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  display: flex;
+  position: absolute;
+  top: 60px;
+  z-index: 1000;
+}
+
+.banner .banner-container .banner-search .banner-search-input .banner-search-input-title {
+  width: 100%;
+}
+
+
+
+.banner-search-input .banner-search-input-title .si-title {
+  display: block;
+  padding: 10px;
+  font-weight: 500;
+  background-color: #eee;
+}
+/* .banner-search-input .banner-search-input-title ul{
+  display: none;
+} */
+.banner-search-input .banner-search-input-title .rs-search{
+  display: none;
+}
+
+
+
+.banner-search-input .banner-search-input-title ul li {
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.banner-search-input .banner-search-input-title ul li a {
+  display: flex;
+}
+
+.banner-search-input .banner-search-input-title ul li a span {
+  padding-left: 10px;
+}
+
+.banner-search-input .banner-search-input-title ul li a span {
+  font-size: 14px;
+}
+.banner .banner-container .banner-card {
+  width: 100%;
+  height: 50%;
+}
+
+.banner .banner-card-container .autoplay {
+  padding-top: 90px;
+}
+
+.banner .banner-card-container .banner-card-item {
+  background-color: #f0ffff;
+  opacity: 0.75;
+  height: 280px;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.banner .banner-card-container .banner-card-item .banner-card-title {
+  color: #008b8b;
+  margin: 10px 0;
+  height: 30%;
+}
+.banner .banner-card-container .banner-card-item .banner-card-title h4 {
+  opacity: 1;
+  text-shadow: 1px 1px 1px #ccc;
+}
+
+.banner .banner-card-container .banner-card-item .banner-card-content {
+  height: 70%;
+}
+
+.banner .banner-card-container .banner-card-item .banner-card-content p {
+  color: #2f4f4f;
+  font-family: "Nunito", sans-serif;
+  opacity: 1;
+  font-size: 18px;
+}
+
+.banner .banner-container .banner-footer {
+  background-image: linear-gradient(
+    transparent,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 1)
+  );
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 2px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.slick-dots li button {
+  line-height: 0;
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: #ccc;
+}
+
+.slick-dots li button:before {
+  content: "";
+}
+
+.slick-dots li.slick-active button {
+  background: #369693;
+}
+@media only screen and (max-width: 600px) {
+  .banner .banner-container .banner-search .banner-search-container {
+    width: 300px;
+  }
+    .banner .banner-container .banner-search .banner-search-container .icon-input::placeholder {
+      font-size: 14px;
+    }
+
+  .banner .banner-container .banner-search .banner-search-input {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 281px) {
+  .banner .banner-container .banner-title h1 {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: rgb(0, 139, 139);
+    text-shadow: 1px 1px 1px #ccc;
+    font-weight: 600;
+  }
+  
+  .banner .banner-container .banner-title h2 {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: rgb(0, 139, 139);
+    font-weight: 400;
+    text-shadow: 1px 1px 1px #ccc;
+  }
+
+  
+  .banner .banner-container .banner-search .banner-search-container {
+    width: 200px;
+    height: 40px;
+  }
+  
+  .banner .banner-container .banner-search .banner-search-input {
+    width: 200px;
+  
+  }
+
+    .banner .banner-container .banner-search .banner-search-container input::placeholder {
+   color: black;
+ }
+    .banner .banner-container .banner-search .banner-search-container .icon-input::placeholder {
+      font-size: 9.3px;
+    }
+
+ 
+  .banner .banner-container .banner-search .banner-search-container .icon-search {
+    font-size: 20px;
+    color: #daa520;
+    cursor: pointer;
+  }
+}
+
+
+/* @media only screen and (max-width: 541px) {
+.banner .banner-container {
+  background-image: url(../../../assets/images/background/b-g-banner-1.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+} */

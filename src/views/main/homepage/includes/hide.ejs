@@ -1,0 +1,124 @@
+<div class="hide-all spe-hide-all" id="spe-hide-all">
+    <div class="hide-all-container">
+        <div class="hide-all-top">
+            <div class="icon-back" id="icon-back"><i class=" fa-solid fa-arrow-left"></i></div>
+            <div class="hide-title"><span>Chuyên khoa</span> </div>
+        </div>
+        <div class="hide-all-bottom">
+            <div class="hide-title-bottom">
+                <h6>Chuyên khoa nổi bật
+                </h6>
+            </div>
+            <ul class="hide-all-list">
+                <%specializations.forEach(function(item){%>
+                    <li class="hide-all-item d-h">
+                        <a href="/detail/specialization/<%= item.id %>">
+                            <div class="hide-item-img spe-item">
+                                <img src="/images/specializations/<%=item.image%>" alt="" width="100px" height="67px">
+
+                            </div>
+                            <div class="hide-item-main">
+                                <span class="item-main-top">
+                                    <%=item.name%>
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+                    <%})%>
+                        <li class="hide-all-item a-h"><a href="all-specializations">
+                            <span>Xem tất cả</span>
+                        </a></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+
+
+<div class="hide-all cli-hide-all" id="cli-hide-all">
+    <div class="hide-all-container">
+        <div class="hide-all-top">
+            <div class="icon-back" id="icon-back1"><i class="fa-solid fa-arrow-left"></i>
+            </div>
+            <div class="hide-title"><span>Cơ sở y tế</span> </div>
+        </div>
+        <div class="hide-all-bottom">
+            <div class="hide-title-bottom">
+                <h6>Cơ sở y tế nổi bật
+                </h6>
+            </div>
+            <ul class="hide-all-list">
+                <%clinics.forEach(function(item){%>
+                    <li class="hide-all-item d-h">
+                        <a href="/detail/clinic/<%= item.id %>">
+                            <div class="hide-item-img cli-item">
+                                <img src="/images/clinics/<%=item.image%>" alt="" width="100px" height="67px">
+
+                            </div>
+                            <div class="hide-item-main">
+                                <span class="item-main-top">
+                                    <%=item.name%>
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+                    <%})%>
+                        <li class="hide-all-item a-h"><a href="all-clinics">
+                            <span>Xem tất cả</span>
+                        </a></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="hide-all doctor-hide-all" id="doctor-hide-all">
+    <div class="hide-all-container">
+        <div class="hide-all-top">
+            <div class="icon-back" id="icon-back2"><i class="fa-solid fa-arrow-left"></i>
+            </div>
+
+            <div class="hide-title"><span>Bác sĩ</span> </div>
+        </div>
+        <div class="hide-all-bottom">
+            <div class="hide-title-bottom">
+                <h6>Bác sĩ các chuyên khoa
+                </h6>
+            </div>
+            <ul class="hide-all-list">
+                <%doctorsLM.forEach(function(item){ %>
+                    <li class="hide-all-item d-h">
+                        <a href="/detail/doctor/<%= item.id %>" class="hide-item-link">
+                            <div class="hide-item-img doctor-item">
+                                <img src="/images/users/<%=item.avatar%>" alt="" width="60px" height="60px">
+
+                            </div>
+                            <div class="hide-item-main">
+                                <span class="item-main-top">
+                                    <%=item.name%>
+                                </span>
+                                <span class="item-main-bottom">
+                                    <%=item.getDataValue('specializationName')%>
+                                </span>
+                            </div>
+                        </a>
+                        <%})%>
+                    </li>
+
+
+                    <li class="hide-all-item a-h"><a href="all-doctors">
+                            <h6>Xem tất cả</h6>
+                        </a></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+</div>

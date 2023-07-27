@@ -1,0 +1,155 @@
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+    <!-- Sidebar Toggle (Topbar) -->
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <i class="fa fa-bars"></i>
+    </button>
+
+    <ul class="navbar-nav ml-auto">
+        <div class="topbar-divider d-none d-sm-block"></div>
+
+        <!-- Nav Item - User Information -->
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= user.name %></span>
+                <img class="img-profile rounded-circle" src="/images/users/<%= user.avatar %>">
+            </a>
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item user-setting" data-user-id="<%= user.id %>" href="#">
+                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                   Cài đặt
+                </a>
+                <a class="dropdown-item" href="/logout" >
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                   Đăng xuất
+                </a>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+<!-- Modal setting-->
+
+<div class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"
+     id="modalSettingUser">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Thông tin tài khoản</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Thay đổi mật khẩu</a>
+                    </li>
+                </ul>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="tab-content" id="myTabContent">
+               
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <form id="formUpdateUser">
+                        <div class="form-row">
+                            <!-- <div class="form-group col-6">
+                                <label class="col-form-label text-label" for="emailUser">Email </label>
+                                <input type="text" class="form-control" id="emailUser" name="emailUser"
+                                       value="<%= user.email %>" placeholder="Email">
+                            </div> -->
+                            <div class="form-group col-6">
+                                <label class="col-form-label text-label" for="nameUser">Tên hiển thị</label>
+                                <input type="text" class="form-control" id="nameUser" name="nameUser" placeholder="Tên hiển thị"
+                                       value="<%= user.name %>">
+                            </div>
+                            <div class="form-group col-6">
+                                <label class="col-form-label text-label" for="phoneUser">Số điện thoại</label>
+                                <input type="text" class="form-control" id="phoneUser" name="phoneUser" placeholder="Số điện thoại"
+                                    value="<%= user.phone %>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label text-label" for="addressUser">Địa chỉ</label>
+                            <input type="text" class="form-control" id="addressUser" name="addressUser" placeholder="Địa chỉ"
+                                value="<%= user.address %>">
+                        </div>
+                        <!-- <div class="form-row">
+                            <div class="form-group col-6">
+                                <label class="col-form-label text-label" for="phoneUser">Số điện thoại</label>
+                                <input type="text" class="form-control" id="phoneUser" name="phoneUser"
+                                       placeholder="Số điện thoại" value="<%= user.phone %>">
+                            </div>
+                        </div> -->
+                        
+                        <div class="form-row">
+                            
+                            <div class="form-group col-12 d-flex flex-row">
+                                <div class="d-flex flex-column" style="width:50%">
+                                    <label class="col-form-label text-label">Avatar </label>
+                                    <!-- <label  for="update-avatar" class="lb-update-image" style="border: 1px solid #eee;padding:5px 5px;cursor: pointer;">Cập nhật avatar</label> -->
+                                    <input type="file" id="update-avatar" accept="image/*"  onchange="loadImageUserSetting(event)">
+                                </div>
+                                <% if(user.avatar) { %>
+                                <img class="img-user-setting ml-4" name="img-u-s"  id="img-user-setting" src="/images/users/<%= user.avatar%> " style="width:45%;object-fit:contain;";>
+                            <% } else { %>
+                                <img class="img-user-setting ml-4 d-none" name="img-u-s"  id="img-user-setting" style="width:45%;object-fit:contain;" ;><% } %>
+
+                                
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-end mr-3">
+                            <button type="button" class="btn btn-primary" id="updateInfoUserSetting" data-user-id="<%=user.id%>" data-role-id="<%=user.roleId%>"> Cập nhật </button>
+                            <button type="button" class="btn btn-secondary ml-3" data-dismiss="modal">Hủy</button>
+                        </div>
+                         </form>
+                    </div>
+                  
+                    <div class="tab-pane fade " id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                        <div class="form-group col-6 mx-auto">
+                            <label class="col-form-label text-label" for="oldPassword">Mật khẩu cũ</label>
+                            <div class="ip-password">
+                            <input type="password" class="form-control" id="oldPassword" name="oldPassword" placeholder="Nhập mật khẩu cũ">
+                            <i class="fa-solid fa-eye-slash icon-pass" id="icon-show-pass"></i>
+                            <i class="fa-solid fa-eye icon-pass" id="icon-hide-pass"></i>
+                        </div>
+                        </div>
+
+                        <div class="form-group col-6 mx-auto">
+                            <label class="col-form-label text-label" for="newPassword">Mật khẩu mới</label>
+                                        <div class="ip-password">
+                            <input type="password" class="form-control" id="newPassword" name="newPassword" placeholder="Nhập mật khẩu mới" >
+                            <i class="fa-solid fa-eye-slash icon-pass" id="icon-show-pass1"></i>
+                            <i class="fa-solid fa-eye icon-pass" id="icon-hide-pass1"></i>
+                                        </div>
+                        </div>
+
+                        <div class="form-group col-6 mx-auto">
+                            <label class="col-form-label text-label" for="confirmPassword">Xác nhận mật khẩu</label>
+                                        <div class="ip-password">
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Nhập lại mật khẩu cũ">
+                            <i class="fa-solid fa-eye-slash icon-pass" id="icon-show-pass2"></i>
+                            <i class="fa-solid fa-eye icon-pass" id="icon-hide-pass2"></i>
+                                        </div>
+                        </div>
+
+                        <input type="text" class="form-control" id="roleId" name="roleId" 
+                            value="<%= user.roleId %>" hidden>
+
+                        <hr>
+                        <div class="d-flex justify-content-end mr-3">
+                            <button type="button" class="btn btn-primary" id="updatePasswordUserSetting" data-user-id="<%=user.id%>"> Cập nhật </button>
+                            <button type="button" class="btn btn-secondary ml-3" data-dismiss="modal">Hủy</button>
+
+
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

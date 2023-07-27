@@ -1,0 +1,124 @@
+<% extend("master.ejs") %>
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Quản lý bác sĩ</h1>
+    <a href="/users/manage/doctor/create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-plus-circle fa-sm text-white-50"></i> Thêm mới</a>
+</div>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Danh sách bác sĩ</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTableDoctor" width="100%" cellspacing="0">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Chức vị - Họ tên</th>
+                    <th>Chuyên khoa</th>
+                    <th>Phòng khám</th>
+                    <th>Trạng thái</th>
+                    <th>Thao tác</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% doctors.rows.forEach(function(doctor) { %>
+                    <tr>
+                        <td><%= doctor.id %></td>
+                        <td><%= doctor.name %></td>
+                        <td><%= doctor.getDataValue('specializationName') %></td>
+                        <td><%= doctor.getDataValue('clinicName') %></td>
+                        <td>
+                            <% if(doctor.isActive) {%> Active
+                           <%} else {%> Inactive
+                            <%}%>
+                        </td>
+                        <td class="">
+                            <a class="show-doctor-info" data-doctor-id="<%= doctor.id%>" href="#" title="Xem thông tin"><i class="fas fa-info-circle"></i></a>
+                            <a class="edit-doctor-info" href="/users/doctor/edit/<%= doctor.id %>" title="Sửa"><i class="fas fa-pen-square mx-3"></i></a>
+                            <a class="delete-doctor-info" data-doctor-id="<%= doctor.id%>" href="#" title="Xóa"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                <% }) %>
+                </tbody>
+            </table>
+
+            <nav aria-label="navigation" id="paginationForDoctor" data-total="<%=total%>">
+                <ul class="pagination">
+                    <li class="page-item disabled li-pre d">
+                        <a class="page-link page-doctor-pre" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo; Trước</span>
+                        </a>
+                    </li>
+            
+                    <li class="page-item ml-3 li-next d">
+                        <a class="page-link page-doctor-next" href="#" aria-label="Next">
+                            <span aria-hidden="true">Tiếp &raquo; </span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"
+     id="modalInfoDoctor">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Thông tin bác sĩ</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-row">
+                            <div class="form-group col-7">
+                                <label for="nameDoctor" class="col-form-label text-label">Chức vị - Tên</label>
+                                <input type="text" class="form-control" id="nameDoctor" disabled>
+                            </div>
+                            <div class="form-group col-5">
+                                <label for="phoneDoctor" class="col-form-label text-label">Số điện thoại</label>
+                                <input type="text" class="form-control" id="phoneDoctor" disabled>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-6">
+                                <label for="clinicDoctor" class="col-form-label text-label">Phòng khám</label>
+                                <input type="text" class="form-control" id="clinicDoctor" disabled>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="specializationDoctor" class="col-form-label text-label">Chuyên khoa</label>
+                                <input type="text" class="form-control" id="specializationDoctor" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="addressDoctor" class="col-form-label text-label">Địa chỉ</label>
+                            <input type="text" class="form-control" id="addressDoctor" name="addressDoctor" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label text-label"> Ảnh đại diện:</label>
+                            <div id="imageDoctor"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $("div #featureManage").addClass('show');
+        $("div #featureManage").find($("#aManageDoctor")).addClass("active");
+        $(".supporter-list-posts").removeClass("active");
+    })
+</script>

@@ -1,0 +1,77 @@
+.customer-review {
+  background: rgba(175, 174, 174, 0.03);
+  padding-bottom: 40px;
+}
+
+.customer-review .customer-review-title {
+  font-size: 20px;
+  padding-bottom: 30px;
+}
+
+.customer-review .customer-card {
+  height: 420px;
+  padding: 35px;
+  background-color: rgba(229, 238, 231, 0.7);
+  position: relative;
+}
+
+.customer-review .customer-card .card-review-top {
+  height: 100%;
+}
+
+.customer-review .customer-card .card-review-top .card-review-icon {
+  font-size: 30px;
+  color: #20b2aa;
+  text-align: center;
+}
+
+.customer-review .customer-card .card-review-top .card-review-content {
+  padding-top: 10px;
+}
+
+.customer-review .customer-card .card-review-top .card-review-content span {
+  font-size: 24px;
+  font-family: "Nunito", sans-serif;
+  font-style: italic;
+}
+.customer-review .customer-card .card-review-top .card-review-img {
+  display: flex;
+  justify-content: center;
+}
+
+.customer-review .customer-card .card-review-top .card-review-img img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 360px;
+  text-align: center;
+}
+
+.customer-review .card-review-bottom {
+  margin-top: 40px;
+  font-family: "Nunito", sans-serif;
+}
+
+.customer-review .card-review-bottom span:first-child {
+  color: #20b2aa;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.customer-review .card-review-bottom span:last-child {
+  color: #333333;
+  font-size: 14px;
+}
+
+
+/* responsive */
+
+@media only screen and (max-width: 281px) {
+ .customer-review .customer-card .card-review-top .card-review-content span {
+  font-size: 18px;
+  font-family: "Nunito", sans-serif;
+  font-style: italic;
+}
+}

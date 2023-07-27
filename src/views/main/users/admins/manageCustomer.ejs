@@ -1,0 +1,166 @@
+<% extend("master.ejs") %>
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Quan tâm của khách hàng</h1>
+</div>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="patient-new-tab" data-toggle="tab" href="#newFeedbacks" role="tab"
+            aria-controls="home" aria-selected="true">Danh sách phản hồi mới (<%=feedbacks.length%>) </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="patient-need-confirm-tab" data-toggle="tab" href="#feedbackConfirms" role="tab"
+            aria-controls="profile" aria-selected="false">Danh sách phản hồi đã được duyệt(<%=feedbackConfirms.length%>) </a>
+    </li>
+  
+</ul>
+
+<!-- Content Row -->
+<div role="tabpanel"class="tab-pane fade show active card shadow mb-4" id="newFeedbacks">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Danh sách khách hàng phản hồi</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered dataTableFeedback" id="dataTableFeedback" width="100%" cellspacing="0">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên</th>
+                    <th>Tuổi</th>
+                    <th>Địa chỉ</th>
+                    <th>Nội dung</th>
+                    <th>Ngày</th>
+                    <th>Thao tác</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% feedbacks.forEach(function(x) { %>
+                    <tr>
+                        <td><%= x.id %></td>
+                        <td><%= x.name %></td>
+                        <td><%= x.age %></td>
+                        <td><%= x.address %></td>
+                        <td><%= x.content %></td>
+                        <td><%= x.getDataValue('date')%></td>
+                        <td class="">
+                            <a class="done-feedback no-cf" id="btnUpdateFeedback-<%=x.id%>" data-feedback-id="<%=x.id%>" href="#" title="Chưa xác nhận" ><i class="fa fa-check-circle"></i></a>
+                            <a class="info-feedback" title="Thông tin" data-feedback-id="<%=x.id%>"><i class="fas fa-info-circle mx-3"></i></a>
+                            <a class="delete-feedback" data-feedback-id="<%= x.id%>" href="#" title="Xóa"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="tab-pane fade card shadow mb-4" id="feedbackConfirms">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Danh sách phản hồi đã duyệt</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered dataTableFeedback" id="dataTableFeedback" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên</th>
+                        <th>Tuổi</th>
+                        <th>Địa chỉ</th>
+                        <th>Nội dung</th>
+                        <th>Ngày</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% feedbackConfirms.forEach(function(x) { %>
+                        <tr>
+                            <td>
+                                <%= x.id %>
+                            </td>
+                            <td>
+                                <%= x.name %>
+                            </td>
+                            <td>
+                                <%= x.age %>
+                            </td>
+                            <td>
+                                <%= x.address %>
+                            </td>
+                            <td>
+                                <%= x.content %>
+                            </td>
+                            <td>
+                                <%= x.getDataValue('date')%>
+                            </td>
+                            <td class="">
+                                <a class="done-feedback" id="btnUpdateFeedback" data-feedback-id="<%=x.id%>" href="#"
+                                    title="Đã xác nhận"><i class="fa fa-check-circle"></i></a>
+                                <a class="info-feedback"  title="Thông tin" data-feedback-id="<%=x.id%>"><i class="fas fa-info-circle mx-3"></i></a>
+                                <a class="delete-feedback" data-feedback-id="<%= x.id%>" href="#" title="Xóa"><i
+                                        class="fas fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"
+    id="modalInfoFeedback">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Thông tin phản hồi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-row">
+                            <div class="form-group col-7">
+                                <label for="nameFeedback" class="col-form-label text-label">Tên</label>
+                                <input type="text" class="form-control" id="nameFeedback" disabled>
+                            </div>
+                            <div class="form-group col-5">
+                                <label for="ageFeedback" class="col-form-label text-label">Tuổi</label>
+                                <input type="number" class="form-control" id="ageFeedback" disabled>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="addressFeedback" class="col-form-label text-label">Địa chỉ</label>
+                            <input type="text" class="form-control" id="addressFeedback" name="addressFeedback" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label text-label"> Ảnh đại diện:</label>
+                            <div id="imageFeedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contentFeedback" class="col-form-label text-label">Nội dung phản hồi</label>
+                            <textarea type="textarea" class="form-control" id="contentFeedback" name="contentFeedback" disabled></textarea>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Content Row -->
+<script>
+    $(document).ready(function() {
+        $(".supporter-list-customers").addClass("active");
+    });
+</script>

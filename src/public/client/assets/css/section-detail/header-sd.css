@@ -1,0 +1,32 @@
+.header-section-detail{
+   background-color: #22b3ab;
+   position: fixed;
+   width: 100%;
+   display: block;
+   top:0px;
+   z-index: 999;
+}
+
+.header-section-detail-container {
+  padding: 16px 0;
+  display: flex;
+ 
+ 
+}
+
+.header-section-detail-container .hsd-expand-logo{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-section-detail-container .hsd-expand-logo .hsd-expand span {
+  display: block;
+  width: 22px;
+  height: 4px;
+  border-radius: 1px;
+  background-color: #ffffff;
+  margin: 4px;
+  margin-right: 10px;
+}

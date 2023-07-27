@@ -1,0 +1,191 @@
+<%extend("../app.ejs")%>
+
+<%- include('includes/header.ejs') %>
+    <!-- form-book-title -->
+
+
+    <div class="form-book-main book-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-md-9 col-sm-12">
+                    <div class="form-book-title-image" id="infoDoctor" data-doctor-id="<%=data.User.id%>">
+                        <div class="f-b-t-image">
+                            <img src="/images/users/<%=data.User.avatar%>" alt="" width="100px" height="100px">
+                        </div>
+                        <div class="f-b-t-title">
+                            <span class="f-b-t-titleb">Đặt lịch khám</span><br>
+                            <span class="f-b-t-namedt">
+                                <%=data.User.name%>
+                            </span> <br>
+                            <span class="f-b-t-timebook" data-doctor-time="<%=data.time%>"
+                                data-doctor-date="<%=data.date%>">
+                                <%=data.time%> - <%=data.date%>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!-- form -->
+    <div class="form-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-content">
+                        <form id="form-patient-info">
+                            <div class="form-group-price">
+                                <input type="radio" name="price" id="" checked>
+                                <label for="">Giá khám <br><span><%=data.User.Doctor_User.priceTypeData.value%>đ</span></label>
+
+                            </div>
+                            <div class="form-group">
+                                <span><i class="fa-solid fa-user" style="color:#20b2ae"></i></span> <input type="text"
+                                    value="" name="name" id="name" placeholder="Họ tên bệnh nhân">
+                                <div class="invalid-feedback">
+                                    Họ tên bệnh nhân không được để trống
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group-rd">
+                                <input type="radio" name="gender" value="male" id="selectMale" checked>
+                                <label for="selectMale">Nam</label>
+                                <input type="radio" name="gender" value="female" id="selectFeMale">
+                                <label for="selectFemale">Nữ</label>
+                            </div>
+                            <div class="form-group">
+                                <span><i class="fa-solid fa-calendar-days" style="color:#20b2ae"></i></span> <input
+                                    type="date" value="" name="year" id="year" placeholder="Ngày sinh">
+                                <div class="invalid-feedback">
+                                    Ngày sinh không được để trống
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <span><i class="fa-solid fa-envelope" style="color:#20b2ae"></i></span> <input
+                                    type="text" value="" name="email" id="email" placeholder="Email bệnh nhân">
+                                <div class="invalid-feedback">
+                                    Email không để trống hoặc không hợp lệ
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <span><i class="fa-solid fa-phone" style="color:#20b2ae"></i></span> <input type="text"
+                                    value="" name="phone" id="phone" placeholder="Số điện thoại bệnh nhân">
+                                <div class="invalid-feedback">
+                                    Số điện thoại không để trống hoặc không hợp lệ
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <span><i class="fa-solid fa-location-dot" style="color:#20b2ae"></i></span> <input
+                                    type="text" value="" name="address" id="address" placeholder="Địa chỉ bệnh nhân">
+                                <div class="invalid-feedback">
+                                    Địa chỉ không được để trống
+                                </div>
+
+                            </div>
+                            <div class="form-group t-a">
+                                <span><i class="fa-solid fa-circle-plus" style="color:#20b2ae"></i></span>
+
+                                <textarea type="textarea" value="" name="description" id="description"
+                                    placeholder="Lý do khám"></textarea>
+
+                            </div>
+                            <div class="extra-info-content">
+                                <i class="fa-solid fa-pen" style="color:#0075ff"></i><span id="extra-info"
+                                    style="cursor:pointer"> Thông tin
+                                    bổ sung (nếu có)</span>
+                                <div class="open-extra-info" style="display: none;">
+                                    <div class="form-group t-a mt-3">
+                                        <span><i class="fa-solid fa-circle-plus" style="color:#20b2ae"></i></span>
+
+                                        <textarea type="textarea" value="sick-last-time" name="historyInfo"
+                                            id="historyInfo"
+                                            placeholder="Một vài thông tin về lần khám trước"></textarea>
+
+                                    </div>
+                                    <div class="form-group-image-old">
+                                        <label class="mr-2" for="oldForms">Hình ảnh lần khám trước: </label>
+                                        <input name="oldForms" id="oldForms" type="file" accept="image/*"
+                                            onchange="loadFileImageHistory(event)" multiple">
+
+                                    </div>
+                                    <div class="form-group-history ">
+                                        <img class="img-preview-history-info d-none" id="image-preview"
+                                            style="padding-top:10px">
+                                    </div>
+
+                                    <div class="form-group t-a mt-3">
+                                        <span><i class="fa-solid fa-circle-plus" style="color:#20b2ae"></i></span>
+
+                                        <textarea type="textarea" value="" id="moreInfo" name="moreInfo"
+                                            placeholder="Thông tin về hình ảnh"></textarea>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="form-group-rd">
+                                <input type="radio" name="checkdefault" id="" checked>
+                                <label for="">Thanh toán tại cơ sở y tế</label>
+
+                            </div>
+                            <div class="form-group-p price">
+                                <div class="fg-price-top">
+                                    <div class="fpt first">
+                                        <span>Giá khám</span>
+                                        <span><%=data.User.Doctor_User.priceTypeData.value%> đ</span>
+                                    </div>
+                                    <div class="fpt second">
+                                        <span>Phí đặt lịch </span>
+                                        <span>Miễn phí</span>
+                                    </div>
+                                </div>
+                                <div class="fg-price-bottom">
+                                    <div class="fpt first">
+                                        <span>Tổng cộng</span>
+                                        <span style="color:#fe3834; font-weight:300;"><b><%=data.User.Doctor_User.priceTypeData.value%> đ</b></span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group-notice">
+                                <h6>Lưu ý</h6>
+                                <span>1.Thông tin bạn cung cấp sẽ được sử dụng làm hồ sơ khám bệnh. Vì vậy khi điền
+                                    thông tin, bạn vui lòng điền đầy đủ, đúng và kiểm tra lại thông tin trước khi ấn
+                                    "Xác nhận đặt khám".</span><br>
+                                <span>2.Tuân thủ quy định phòng chống dịch (đeo khẩu trang, khử khuẩn, khai báo dịch tễ)
+                                    khi đến khám.</span>
+
+                            </div>
+                            <input type="button" type="submit" value="Xác nhận đặt lịch" class="btn-confirm"
+                                id="btn-confirm-booking" />
+                            <span class="bot-btn">Bằng việc xác nhận đặt khám,bạn đã hoàn toàn đồng ý với <span>Điều
+                                    khoản sử dụng dịch vụ</span> của
+                                chúng tôi</span>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+<%- include('includes/hide.ejs') %>
+<%- include('includes/expand-navbar.ejs') %>
+<%- include('includes/footer.ejs') %>

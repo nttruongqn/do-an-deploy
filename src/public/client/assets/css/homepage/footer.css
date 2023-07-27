@@ -1,0 +1,77 @@
+.footer {
+  background: rgba(229, 238, 231, 0.45);
+  padding-top: 30px;
+  font: 14px/1.5 'Montserrat',
+  sans-serif;
+}
+
+.footer .footer-cl {
+  font-size: 15px;
+  
+  padding-bottom: 15px;
+}
+
+.footer .footer-cl-1 img {
+  position: relative;
+  top:0;
+  left: -14px;
+  
+}
+
+.footer .footer-cl-1 span:first-child {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.footer .footer-cl-2 .footer-list .f-list-item a {
+  color: #20b2aa;
+}
+
+.footer .footer-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.footer .footer-end {
+padding:5px 0;
+  background-color: #20b2aa;
+}
+
+.footer .footer-end .footer-end-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.footer .footer-end .footer-end-container .end-title {
+  font-size: smaller;
+  color: #ffffff;
+}
+
+.footer .footer-end .footer-end-container .end-icon {
+  display: inline-flex;
+  width: 65px;
+  justify-content: space-between;
+}
+
+.footer .footer-end .footer-end-container .end-icon .end-icon-item {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.footer .footer-end .footer-end-container .end-icon .end-icon-item a {
+  color: white;
+}
+
+.footer .footer-end .footer-end-container .end-icon .fb-link {
+  background: #226fb7;
+}
+.footer .footer-end .footer-end-container .end-icon .ytb-link {
+  background: #cc191e;
+}

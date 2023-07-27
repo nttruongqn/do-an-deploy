@@ -1,0 +1,49 @@
+<%extend("../app.ejs")%>
+<%- include('includes/header.ejs') %>
+    <hr>
+    <div class="book-success">
+        <div class="container">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="book-success-container">
+                        <div class="book-success-title">
+                            <h6>Đặt lịch hẹn thành công</h6>
+                        </div>
+                        <div class="book-success-content">
+                            <div class="row">
+
+                                <div class="col-sm-12 col-sm-12">
+                                    <div class="book-success-doctor">
+                                        <div class="book-success-doctor-img">
+                                            <img src="/images/users/<%=patient.getDataValue('doctorAvatar')%>"
+                                                alt="" width="100" height="100">
+                                        </div>
+                                        <div class="book-success-doctor-name">
+                    
+                                            <span><%=patient.getDataValue('doctorName')%></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-sm-12">
+                                    <div class="book-success-main">
+                                        <span>Cảm ơn bạn đã đặt lịch thăm khám từ DoctorCare.<br> Hệ thống đã ghi nhận một cuộc
+                                            hẹn.Nhân viên hỗ trợ sẽ xác nhận việc đặt lịch
+                                            trong vòng 24h sau khi đặt.</span> <br>
+                                        <span>Cần hỗ trợ vui lòng liên hệ Hotline: 115 115</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('includes/expand-navbar.ejs') %>
+<%- include('includes/footer.ejs') %>
+

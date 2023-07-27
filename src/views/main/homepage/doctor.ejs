@@ -1,0 +1,174 @@
+<%extend("../app_add.ejs")%>
+
+    <!-- header-section-detail -->
+    <%- include('includes/header-section-detail.ejs') %>
+
+    <div class="main-section">
+    <div class="container">
+            <ul class="bread-cr">
+                <li><a href="/"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="/">/</a></li>
+                <li><a href="#spe-hide-all">Khám Chuyên khoa</a></li>
+                <li><a href="/">/</a></li>
+                <li><a href="/detail/specialization/<%=specialization.id%>">
+                        <%=specialization.name%>
+                    </a></li>
+            </ul>
+        </div>
+
+
+        <div class="doctor-detail-img-td">
+            <div class="container">
+                <div class="dd-img-title-container">
+                    <div class="dd-img">
+                        <img src="/images/users/<%=doctor.avatar%>" alt="" width="100px"
+                            height="100px">
+                    </div>
+                    <div class="dd-img-title-desc">
+                        <div class="dd-img-title">
+                            <h4><%=doctor.name%></h4>
+                        </div>
+                        <div class="dd-img-t-desc">
+                            <span><%-doctor.jobDescHTML%></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="section-list-item sli-doctor-item">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="s-l-i-item-sche br">
+                            <div class="sche-select">
+                                <select name=""
+                                id="day-book-spe" class="doctor-schedule-spe1" data-doctor="<%= doctor.id %>">
+                                    <% sevenDaySchedule.forEach(function(day) { %>
+                                        <option value="<%= day %>">
+                                            <%= day %>
+                                        </option>
+                                        <% }) %>
+                                </select>
+                            </div>
+                            <div class="sche-icon-title">
+                                <span><i class="fa-solid fa-calendar-days"></i></span>
+                                <span class="sche-title">Lịch Khám</span><br>
+                            </div>
+                            <div class="btn-list-sche" id="div-schedule-<%= doctor.id %>">
+                                <% if(doctor.Schedules.length===0){ %>
+                                    <div class="no-schedule" style=" font: 14px/1.5 'Montserrat'">
+                                        "<%= doctor.name %>" không có cuộc hẹn vào
+                                            <b><%= sevenDaySchedule[0] %>
+                                            </b>.Vui lòng chọn lịch khám tiếp theo.
+                                    </div>
+                                    <% } %>
+                                        <% doctor.Schedules.forEach( function(x, index) { %>
+                                            <% if(x.getDataValue("isDisable")===false) { %>
+                                                <div id="spe-btn-modal-<%= x.id %>" data-doctor-id="<%= doctor.id %>" data-date="<%= x.date %>"
+                                                    data-time="<%= x.time %>" class="btn-list-flex">
+                                                    <button class="b-ls-item">
+                                                    <a href="/get-book-page/<%=x.id%>">
+                                                        <span>
+                                                            <%=x.time%>
+                                                        </span>
+                                                        </a>
+                                                    </button>
+                                                </div>
+                                
+                                                <%}%>
+                                                    <% if( index===doctor.Schedules.length - 1 && x.getDataValue("isDisable")===true){
+                                                        %>
+                                                        <span style=" font: 14px/1.5 'Montserrat'">
+                                                            Không có kế hoạch khám bệnh đã lên lịch nào trong khung thời gian hiện tại.
+                                                        </span>
+                                                        <% } %>
+                                
+                                
+                                                            <%})%>
+
+                            </div>
+                      
+
+                            <div class="s-l-i-item-sche-add no-bt">
+                                <span>Chọn <i class="fas fa-mouse-pointer"></i> và đặt (Phí đặt lịch
+                                    0đ)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="sche-address-price">
+                            <div class="sche-address">
+                                <span class="sche-address-title">ĐỊA CHỈ KHÁM</span><br>
+                                <span class="sche-address-name-clinic"><%=clinic.name%></span><br>
+                                <span  class="sche-name-address"><%=clinic.address%></span>
+                            </div>
+                            <div class="sche-price">
+                                <h6>Giá Khám:</h6>
+                                <span><%=doctor.Doctor_User.priceTypeData.value%> đ</span>
+                            </div>
+                           
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <hr>
+        <div class="doctor-detail-main">
+            <div class="container">
+                <div class="doctor-detail-content">
+                   <%-doctor.introductionHTML%>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('includes/expand-navbar-hsd.ejs') %>
+    <%- include('includes/footer.ejs') %>
+
+    
+<div class="hide-all spe-hide-all" id="spe-hide-all">
+    <div class="hide-all-container">
+        <div class="hide-all-top">
+            <div class="icon-back" id="icon-back3"><i class=" fa-solid fa-arrow-left"></i></div>
+            <div class="hide-title"><span>Chuyên khoa</span> </div>
+        </div>
+        <div class="hide-all-bottom">
+            <div class="hide-title-bottom">
+                <h6>Chuyên khoa nổi bật
+                </h6>
+            </div>
+            <ul class="hide-all-list">
+                <%specializations.forEach(function(item){%>
+                    <li class="hide-all-item d-h">
+                        <a href="/detail/specialization/<%= item.id %>">
+                            <div class="hide-item-img spe-item">
+                                <img src="/images/specializations/<%=item.image%>" alt="" width="100px" height="67px">
+
+                            </div>
+                            <div class="hide-item-main">
+                                <span class="item-main-top">
+                                    <%=item.name%>
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+                    <%})%>
+                        <li class="hide-all-item a-h" id="show-all-sp" style="cursor:pointer">Xem tất cả</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+</div>

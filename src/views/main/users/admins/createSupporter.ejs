@@ -1,0 +1,51 @@
+    <% extend("master.ejs") %>
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Thêm nhân viên hỗ trợ</h1>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-10 mx-auto">
+            <form id="formCreateNewSupporter">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="name">Họ tên hỗ trợ viên</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Họ tên hỗ trợ viên ">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="phone">Số điện thoại</label>
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Số điện thoại">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="password">Mật khẩu</label>
+                        <input type="password" class="form-control" id="password" name="password"
+                            placeholder="Mật khẩu">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Địa chỉ</label>
+                    <input type="text" class="form-control" id="address" name="address" placeholder="Địa chỉ">
+                </div>
+                <div class="form-group">
+                    <label for="description">Mô tả</label>
+                    <textarea id="description" placeholder="Nhập mô tả sơ qua thông tin nhân viên hỗ trợ" class="form-control" name="description"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" id="createNewSupporter">Tạo</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Content Row -->
+    <script>
+        $(document).ready(function () {
+            $("div #featureManage").addClass('show');
+            $("div #featureManage").find($("#aManageDoctor")).addClass("active");
+        })
+    </script>

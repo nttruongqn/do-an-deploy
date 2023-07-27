@@ -1,0 +1,139 @@
+.post-all .post-all-title{
+background-color: #f6f6f6;
+color:#5D5D5D;
+
+}
+
+
+hr{
+margin-top: 0;
+margin-bottom: 0;
+ }
+
+.post-all .post-all-title {
+    display: flex;
+    align-items: center;
+}
+
+.post-all .post-all-title h4{
+    font-weight: bold;
+    font-size: 28px;
+    padding: 10px 0;
+}
+
+
+.post-all-main .post-all-main-list .post-all-main-item .post-all-main-link {
+    display: flex;
+    padding: 10px 0;
+    height: 140px;
+    width: 100%;
+}
+
+.post-all-main .post-all-main-list .post-all-main-item .post-all-main-link img {
+    max-width: 240px;
+    min-width: 240px;
+}
+
+.post-all-main .post-all-main-list .post-all-main-item {
+    border-bottom: 1px solid #eee;
+}
+
+.post-all-main .post-all-main-list .post-all-main-item:last-child{
+    border: none;
+}
+
+.post-all-main-item .post-all-main-link .post-all-main-l-desc{
+    padding-left: 10px;
+    overflow: hidden;
+    color:#333;
+    width: 100%;
+   
+}
+
+.post-all-main-item .post-all-main-link .post-all-main-l-desc .pam-l-d-title h3{
+    font-size: 16px;
+    font-weight: bold;
+
+}
+.post-all-main-item .post-all-main-link .post-all-main-l-desc  .desc-main-l {
+display: -webkit-box;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
+overflow: hidden;
+}
+
+.pagination-container{
+    padding: 12px 0;
+}
+/* .page-link .page-post-pre-client,.page-post-next-client span{
+    color: #20b2aa;
+} */
+/* .page-link .page-post-pre-client,
+.page-post-pre-client span {
+    color: #20b2aa;
+} */
+
+
+
+
+@media only screen and (max-width: 600px) {
+.post-all-main .post-all-main-list .post-all-main-item .post-all-main-link img {
+    max-width: 180px;
+    min-width: 180px;
+}
+.post-all-main-item .post-all-main-link .post-all-main-l-desc .pam-l-d-title h3 {
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+.post-all-main-item .post-all-main-link .post-all-main-l-desc .pam-l-d-title .extra-desc{
+    font-size: 10px;
+}
+.post-all-main-item .post-all-main-link .post-all-main-l-desc .pam-l-d-title .extra-desc .desc-main-l{
+    display: none;
+}
+    .doctor-l-main .e-main{
+        display: none;
+    }
+
+/* 
+.post-all-main-item .post-all-main-link .post-all-main-l-desc .pam-l-d-content span {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 12px;
+} */
+
+.post-all-main-item .post-all-main-link .post-all-main-l-desc .desc-main-l {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 12px;
+}
+}
+
+@media only screen and (max-width: 280px) {
+    .post-all-main .post-all-main-list .post-all-main-item .post-all-main-link img {
+    max-width: 120px;
+    min-width: 120px;
+    height: 120px;
+    }
+
+    .post-all-main-item .post-all-main-link .post-all-main-l-desc .pam-l-d-title h3 {
+        font-size: 14px;
+        font-weight: bold;
+
+    }
+    .post-all-main-item .post-all-main-link .post-all-main-l-desc .pam-l-d-title .extra-desc span{
+        font-size: 8px;
+    }
+
+
+
+
+
+}
+

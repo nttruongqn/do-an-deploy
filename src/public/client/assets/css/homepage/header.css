@@ -1,0 +1,124 @@
+.header-container {
+  padding: 20px 0;
+  display: flex;
+}
+
+.header-container .header-expand-logo {
+  display: flex;
+  width: 25%;
+  align-items: center;
+}
+
+.header-container .header-expand-logo .header-expand span {
+  display: block;
+  width: 22px;
+  height: 4px;
+  border-radius: 1px;
+  background-color: #969495;
+  margin: 4px;
+  margin-right: 10px;
+}
+
+.header-container .header-menu {
+  width: 65%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+.header-container .header-menu .menu-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-container .header-menu .menu-item {
+  padding: 0 8px;
+  margin-right: 10px;
+}
+
+.header-container .header-menu .menu-item a {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-container .header-menu .menu-item a:hover{
+  color: #20B2AA;
+}
+
+.header-container .header-menu .menu-item a span:first-child {
+  font-weight: 700;
+  font-size: 14px;
+}
+.header-container .header-menu .menu-item a span:last-child {
+  font-size: 11px;
+}
+
+.header-container .header-support {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.header-container .header-support .icon-support {
+  color: #b0c4de;
+}
+
+.header-container .header-support .icon-title {
+  color: var(--text-color);
+  margin-left: 5px;
+}
+
+/* responsive */
+
+@media only screen and (max-width: 913px) {
+  .header-container .header-menu {
+    display: none;
+  }
+
+  .header-container .header-expand-logo {
+    width: 80%;
+  }
+
+  .header-container .header-support {
+    width: 20%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .header-container .header-menu {
+    display: none;
+  }
+
+  .header-container .header-expand-logo {
+    width: 80%;
+  }
+
+  .header-container .header-support {
+    width: 20%;
+  }
+}
+
+@media only screen and (max-width: 361px) {
+  .header-container .header-menu {
+    display: none;
+  }
+
+  .header-container .header-expand-logo {
+    width: 70%;
+  }
+
+  .header-container .header-support {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 281px) {
+  .header-container .header-expand-logo .header-logo img {
+    width: 120px;
+    height: 40px;
+ 
+  }
+
+
+}

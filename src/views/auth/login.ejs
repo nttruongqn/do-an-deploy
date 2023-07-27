@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='/images/favicon.ico' rel="icon" type="image/ico" />
+    <title>Trang Quản Trị</title>
+
+    <!-- lins -->
+    <script src="/components/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="/client/assets/libs/fontawesome/all.css">
+    <script src="/components/bootstrap/js/bootstrap.min.js"></script>
+
+
+    <style>
+        .ip-password{
+            position: relative;
+        }
+        .ip-password .icon-pass{
+            display: none;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+         
+        }
+    </style>
+
+ 
+</head>
+
+<body>
+    <div id="login">
+   
+        <h3 class="text-center text-white pt-5">Hệ Thống Quản Lý Website Đặt Lịch Khám Bệnh </h3>
+        <div class="container">
+            <% if(error !="" ){ %>
+                <div class="alert alert-danger">
+                    <%= error %>
+                </div>
+                <% } %>
+                    <div id="login-row" class="row justify-content-center align-items-center">
+                        <div id="login-column" class="col-md-6">
+                            <div id="login-box" class="col-md-12">
+                                <form id="login-form" class="form" action="/login" method="post">
+                                    <h3 class="text-center text-info">Đăng nhập</h3>
+                                    <div class="form-group">
+                                        <label for="email" class="text-info">Email:</label><br>
+                                        <input type="text" name="email" placeholder="Nhập email" id="email" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password" class="text-info">Mật khẩu:</label><br>
+                                        <div class="ip-password">
+                                        <input type="password" name="password" placeholder="Nhập mật khẩu" id="password" class="form-control">
+                                        <i class="fa-solid fa-eye-slash icon-pass" id="icon-show-pass"></i>
+                                        <i class="fa-solid fa-eye icon-pass" id="icon-hide-pass"></i>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="form-group s-bh">
+
+                                        <input type="submit" name="submit" class="btn btn-info btn-md"
+                                            value="Đăng nhập">
+                                        <a href="/" class="back-home">Quay lại trang chủ</a>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+
+  
+    <script src="/client/assets/libs/fontawesome/all.min.js"></script>
+    <script type="text/javascript" src="/client/assets/libs/jquery-3.6.0.min.js"></script>
+    <script >
+        $(document).ready(function () {
+            $('#email').click(function (e) {
+                $('#password').attr("type", "password");
+                $("#icon-show-pass").hide();
+                $("#icon-hide-pass").hide();
+            });
+            $('#password').click(function (e) { 
+                $("#icon-show-pass").show();
+                
+            });
+            $('#icon-show-pass').click(function (e) {
+                $('#password').attr("type","text");
+                $("#icon-show-pass").hide();
+                $("#icon-hide-pass").show();
+            });
+              $('#icon-hide-pass').click(function (e) {
+                $('#password').attr("type", "password");
+                $("#icon-show-pass").show();
+                $("#icon-hide-pass").hide();
+            });
+          
+        });
+    </script>
+
+
+   
+</body>
+
+</html>
